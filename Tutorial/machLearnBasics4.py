@@ -8,8 +8,8 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-from mpl_toolkits.mplot3d import Axes3D
-import mpld3
+#from mpl_toolkits.mplot3d import Axes3D #Uncomment this to get d3 js plots
+#import mpld3 #Uncomment this to get d3 js plots
 import numpy as np
 import csv
 
@@ -43,9 +43,9 @@ ax2      = fig2.add_subplot(111)
 ax2.scatter(list(data3d[:,0]),list(data3d[:,1]))
 ax2.set_xlabel("x1")
 ax2.set_ylabel("x2")
-html2d  = mpld3.fig_to_html(fig2)
-with open("html2d.txt",'wb') as f:
-    f.write(html2d)
+#html2d  = mpld3.fig_to_html(fig2)
+#with open("html2d.txt",'wb') as f:
+#    f.write(html2d)
 plt.savefig("as2d")
 
 
@@ -57,20 +57,9 @@ ax3.set_xlabel("x1")
 ax3.get_yaxis().set_visible(False)
 
 html1d  = mpld3.fig_to_html(fig3)
-with open("html1d.txt",'wb') as f:
-    f.write(html1d)
+#with open("html1d.txt",'wb') as f:
+#    f.write(html1d)
 plt.savefig("as1d")
-
-
-#fig4    = plt.figure(3)
-#ax4     = fig4.add_subplot(111)
-#vecs    = np.array([[0,0,0,1],[0,0,1,0]])
-#X,Y,U,V = zip(*vecs)
-#ax4.quiver(X,Y,U,V,scale=1,color='b')
-#ax4.set_xlim([-.0005,1])
-#ax4.set_ylim([0,1.1])
-#plt.draw()
-#plt.savefig("xyVectors")
 
 
 """**************************************************************"""
@@ -107,20 +96,6 @@ transf  = pca.fit_transform(data)
 
 
 print pca.components_ #this prints the principle components
-#d1      = np.reshape(data[0],(1,-1))
-#d1t     = pca.transform(d1)
-
-#xmax    = np.max(data[:,0])
-#ymax    = np.max(data[:,1])
-
-#m       = np.max([xmax,ymax])
-#comp    = pca.components_
-#vecs    = list(comp)[0]
-#v       = -m*np.append([0,0],vecs)
-#print v
-#
-#X,Y,U,V = zip(*vecs)
-#ax.quiver(v[0],v[1],v[2],v[3],scale=1,color='b')
 
 
 #Plot the data in PCA space
