@@ -56,7 +56,7 @@ ax3.scatter(data3d[:,0],np.ones(data3d.shape[0]))
 ax3.set_xlabel("x1")
 ax3.get_yaxis().set_visible(False)
 
-html1d  = mpld3.fig_to_html(fig3)
+#html1d  = mpld3.fig_to_html(fig3)
 #with open("html1d.txt",'wb') as f:
 #    f.write(html1d)
 plt.savefig("as1d")
